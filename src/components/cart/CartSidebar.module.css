@@ -1,0 +1,104 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -512px;
+  width: 512px;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.449219px;
+  color: #0a0a0a;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebarContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.emptyMessage {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3125px;
+  color: #4a5565;
+  text-align: center;
+  margin: auto;
+}
+
+.itemsList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+}

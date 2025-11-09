@@ -1,0 +1,99 @@
+.summaryPage {
+  background: #F9FAFB;
+  min-height: 100vh;
+  padding: 32px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0A0A0A;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.150391px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #0A0A0A;
+  margin: 0;
+}
+
+.content {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 32px;
+  text-align: center;
+}
+
+.successMessage h2 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #0A0A0A;
+  margin: 0 0 8px 0;
+}
+
+.successMessage p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4A5565;
+  margin: 0;
+}
+
+.actions {
+  margin-top: 24px;
+}
+
+.continueShopping {
+  display: inline-block;
+  background: #030213;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.150391px;
+  transition: background-color 0.2s ease;
+}
+
+.continueShopping:hover {
+  background: #1a1a2e;
+}

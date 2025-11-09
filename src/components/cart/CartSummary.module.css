@@ -1,0 +1,134 @@
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.449219px;
+  color: #0a0a0a;
+  margin: 0;
+}
+
+.emptyMessage {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3125px;
+  color: #4a5565;
+  margin: 0;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  padding: 17px 0 0;
+  gap: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.summaryRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 24px;
+}
+
+.label {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3125px;
+  color: #0a0a0a;
+}
+
+.value {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3125px;
+  color: #0a0a0a;
+}
+
+.shippingValue {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3125px;
+  color: #00a63e;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.totalLabel {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3125px;
+  color: #0a0a0a;
+}
+
+.totalValue {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.0703125px;
+  color: #0a0a0a;
+}
+
+.checkoutButton {
+  width: 100%;
+  height: 40px;
+  background: #030213;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.150391px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkoutButton:hover {
+  background: #1a1a2e;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .totalValue {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

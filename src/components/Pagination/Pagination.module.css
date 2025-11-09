@@ -1,0 +1,83 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+  user-select: none;
+}
+
+.textButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0a0a0a;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.textLabel {
+  display: inline-block;
+}
+
+.disabled {
+  color: #a0a0a0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pageGroup {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.pageButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #0a0a0a;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pageButton.active {
+  background: #030213;
+  color: #ffffff;
+  border: 1px solid #030213;
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 8px;
+  }
+  .textButton {
+    font-size: 13px;
+  }
+  .pageButton {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+}
