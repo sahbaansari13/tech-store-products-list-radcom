@@ -15,11 +15,13 @@ const ProductList: React.FC<ProductListProps> = ({
   products,
   itemsPerPage = 6,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [visibleProducts, setVisibleProducts] = useState<Product[]>(
+    products.slice(0, itemsPerPage)
+  );
 
-  const totalPages = Math.ceil(products.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentProducts = products.slice(startIndex, startIndex + itemsPerPage);
+  const handlePageChange = (start: number, end: number) => {
+    setVisibleProducts(products.slice(start, end));
+  };
 
   return (
     <div className={styles.productList}>
@@ -32,16 +34,16 @@ const ProductList: React.FC<ProductListProps> = ({
         </div>
 
         <div className={styles.grid}>
-          {currentProducts.map((product) => (
+          {visibleProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
         <div className={styles.paginationWrapper}>
           <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onChange={setCurrentPage}
+            totalItems={products.length}
+            itemsPerPage={itemsPerPage}
+            onPageChange={handlePageChange}
           />
         </div>
       </div>
