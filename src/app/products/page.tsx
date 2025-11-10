@@ -4,7 +4,7 @@ import ProductList from "@/components/product/ProductList";
 import { Product, ProductsResponse } from "@/types/products";
 
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch("https://dummyjson.com/products?limit=30&skip=30", {
+  const res = await fetch("https://dummyjson.com/products?limit=100&skip=10", {
     next: { revalidate: 3600 },
   });
 

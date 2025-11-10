@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Pagination.module.css";
 
 type Props = {
-  totalItems: number; // تعداد کل محصولات (مثلاً 100)
-  itemsPerPage?: number; // چند تا در هر صفحه؟ (پیش‌فرض 10)
+  totalItems: number;
+  itemsPerPage?: number;
   onPageChange: (startIndex: number, endIndex: number) => void;
 };
 
@@ -31,6 +31,20 @@ export default function Pagination({
     if (currentPage < totalPages) setCurrentPage((p) => p + 1);
   };
 
+  const getVisiblePages = (): number[] => {
+    if (totalPages <= 2) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    } else if (currentPage === 1) {
+      return [1, 2];
+    } else if (currentPage === totalPages) {
+      return [totalPages - 1, totalPages];
+    } else {
+      return [currentPage - 1, currentPage];
+    }
+  };
+
+  const pages = getVisiblePages();
+
   return (
     <nav className={styles.pagination}>
       <button
@@ -38,21 +52,26 @@ export default function Pagination({
           currentPage === 1 ? styles.disabled : ""
         }`}
         onClick={goPrev}
+        aria-disabled={currentPage === 1}
       >
-        <img src="/icons/left-arrow.svg" alt="previous" className={styles.icon} />
+        <img
+          src="/icons/left-arrow.svg"
+          alt="previous"
+          className={styles.icon}
+        />
         <span>Previous</span>
       </button>
 
       <div className={styles.pageGroup}>
-        {Array.from({ length: totalPages }, (_, i) => (
+        {pages.map((p) => (
           <button
-            key={i + 1}
-            onClick={() => setCurrentPage(i + 1)}
+            key={p}
+            onClick={() => setCurrentPage(p)}
             className={`${styles.pageButton} ${
-              currentPage === i + 1 ? styles.active : ""
+              currentPage === p ? styles.active : ""
             }`}
           >
-            {i + 1}
+            {p}
           </button>
         ))}
       </div>
@@ -62,6 +81,7 @@ export default function Pagination({
           currentPage === totalPages ? styles.disabled : ""
         }`}
         onClick={goNext}
+        aria-disabled={currentPage === totalPages}
       >
         <span>Next</span>
         <img src="/icons/right-arrow.svg" alt="next" className={styles.icon} />
